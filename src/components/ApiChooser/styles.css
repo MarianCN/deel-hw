@@ -1,0 +1,19 @@
+.apiChooser {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+}
+
+.apiChooser button {
+  padding: 10px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.apiChooser button.active {
+  background-color: #4c74ea;
+  color: white;
+}
