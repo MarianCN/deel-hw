@@ -31,6 +31,7 @@ export const Search: FC<Props> = ({
         inputValue={inputValue}
         setInputValue={setInputValue}
       />
+      {/* SearchHandler styling can be improved by adding a dropdown effect with absolute position */}
       <SearchHandler handleSelectItem={handleSelectItem} />
     </>
   );

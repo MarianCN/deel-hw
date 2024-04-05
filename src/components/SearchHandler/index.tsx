@@ -14,6 +14,8 @@ export const SearchHandler: FC<Props> = ({ handleSelectItem }) => {
 
   const { results, isLoading, error } = data;
 
+  // The styling here can be improved by adding a gray hover background to the Item, and removing highlightedIndex.
+  // This would be better than adding a mouseEnter/mouseLeave handler for each Item.
   const handleClick = (value: string): void => {
     handleSelectItem(value);
   };
