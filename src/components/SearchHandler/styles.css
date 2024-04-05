@@ -1,0 +1,18 @@
+.searchHandler {
+  background: white;
+  overflow-y: auto;
+}
+.searchHandler .item {
+  padding: 10px;
+  cursor: pointer;
+
+  border-bottom: 1px solid gray;
+  text-transform: capitalize;
+}
+
+.searchHandler .item.highlighted {
+  background-color: rgb(241, 241, 241);
+}
+.searchHandler .textHighlighted {
+  background-color: yellow;
+}

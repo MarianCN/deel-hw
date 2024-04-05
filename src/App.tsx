@@ -1,9 +1,10 @@
 import { useState } from "react";
 
+import { ApiType } from "./types";
+import { Search } from "./components/Search";
+
 // I used CSS instead of SCSS for simplicity of this task
 import "./styles.css";
-import { Search } from "./components/Search";
-import { ApiType } from "./types";
 
 export const App = () => {
   const [activeApi, setActiveApi] = useState<ApiType>(ApiType.MOCKED_PROMISE);
