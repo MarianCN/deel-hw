@@ -2,12 +2,16 @@ import { useState } from "react";
 
 import { ApiType } from "./types";
 import { Search } from "./components/Search";
+import { useSearch } from "./hooks/useSearch";
 
 // I used CSS instead of SCSS for simplicity of this task
 import "./styles.css";
 
 export const App = () => {
   const [activeApi, setActiveApi] = useState<ApiType>(ApiType.MOCKED_PROMISE);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSearch = useSearch(activeApi);
 
   const getButtonClassName = (apiType: ApiType): string =>
     activeApi === apiType ? "active" : "";
@@ -19,6 +23,7 @@ export const App = () => {
   return (
     <div className="app">
       <div className="content">
+        {/* apiChooser is for showing both Mocked and RestAPI responses */}
         <div className="apiChooser">
           <button
             className={getButtonClassName(ApiType.MOCKED_PROMISE)}
@@ -34,7 +39,11 @@ export const App = () => {
           </button>
         </div>
 
-        <Search apiType={activeApi} />
+        <Search
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          handleSearch={handleSearch}
+        />
       </div>
     </div>
   );

@@ -15,8 +15,10 @@ interface GlobalContextType {
   // I added here the correct type to be able to pass both value,
   // and callback function with prev value
   setHighlightedIndex: Dispatch<SetStateAction<HighlightedIndex>>;
+
   data: DataState;
   setData: Dispatch<SetStateAction<DataState>>;
+
   searchedString: string;
   setSearchedString: Dispatch<SetStateAction<string>>;
 }

@@ -44,7 +44,9 @@ export const SearchInput: FC<Props> = ({
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "ArrowDown") {
+        // e.preventDefault() is needed to prevent the cursor from moving to the beginning or to the end of the input
         e.preventDefault();
+
         setHighlightedIndex((prev) =>
           // This is needed to have the highlight between 0 and results.length - 1
           prev === null ? 0 : Math.min(results.length - 1, prev + 1)
@@ -81,6 +83,7 @@ export const SearchInput: FC<Props> = ({
     };
   }, [inputRef, onKeyDown, setHighlightedIndex]);
 
+  // This is needed to reset the highlighted index when the input value changes
   useEffect(() => {
     return () => {
       setHighlightedIndex(null);
